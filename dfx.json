@@ -1,13 +1,6 @@
 {
   "canisters": {
-    "neuronpool_landing_backend": {
-      "main": "src/neuronpool_landing_backend/main.mo",
-      "type": "motoko"
-    },
     "neuronpool_landing_frontend": {
-      "dependencies": [
-        "neuronpool_landing_backend"
-      ],
       "frontend": {
         "entrypoint": "src/neuronpool_landing_frontend/src/index.html"
       },
