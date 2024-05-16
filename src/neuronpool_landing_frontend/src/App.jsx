@@ -82,7 +82,7 @@ const App = () => {
         </Box>
       </Flex>
       <Flex h="10vh" align="center" justify="center">
-        <Flex w="80%" align="center" direction={{ base: "column", md: "row" }} gap={1}>
+        <Flex w="80%" align="center" direction={{ base: "column", md: "row" }} gap={2}>
           <Heading
             color={subFontColor}
             fontFamily="'Roboto Mono', monospace"
