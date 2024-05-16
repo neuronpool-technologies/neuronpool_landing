@@ -33,13 +33,8 @@ const App = () => {
             NeuronPool
           </Heading>
           <Spacer />
-          <Button
-            size={{ base: "sm", md: "md" }}
-            colorScheme="blue"
-            isDisabled
-            rightIcon={<LockIcon />}
-          >
-            Launch dApp
+          <Button colorScheme="blue" isDisabled rightIcon={<LockIcon />}>
+            Stake now
           </Button>
         </Flex>
       </Flex>
@@ -87,13 +82,23 @@ const App = () => {
         </Box>
       </Flex>
       <Flex h="10vh" align="center" justify="center">
-        <Heading
-          color={subFontColor}
-          fontFamily="'Roboto Mono', monospace"
-          size={{ base: "md", md: "lg" }}
-        >
-          Launching soon...
-        </Heading>
+        <Flex w="80%" align="center" direction={{ base: "column", md: "row" }} gap={1}>
+          <Heading
+            color={subFontColor}
+            fontFamily="'Roboto Mono', monospace"
+            size="sm"
+          >
+            hello@neuronpool.com
+          </Heading>
+          <Spacer />
+          <Heading
+            color={subFontColor}
+            fontFamily="'Roboto Mono', monospace"
+            size="sm"
+          >
+            Launching soon...
+          </Heading>
+        </Flex>
       </Flex>
     </>
   );
