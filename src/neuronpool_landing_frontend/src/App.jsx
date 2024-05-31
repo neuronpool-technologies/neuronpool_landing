@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  fontColor,
   topGradient,
   middleGradient,
   bottomGradient,
@@ -18,20 +17,16 @@ import {
   ListIcon,
   ListItem,
   Highlight,
+  Image,
 } from "@chakra-ui/react";
+import logo from "../assets/neuronpool_logo.svg";
 
 const App = () => {
   return (
     <>
       <Flex h="10vh" align="center" justify="center">
         <Flex w="80%" align="center">
-          <Heading
-            color={fontColor}
-            fontFamily="'Roboto Mono', monospace"
-            size={{ base: "md", md: "lg" }}
-          >
-            NeuronPool
-          </Heading>
+          <Image src={logo} h={"70px"} />
           <Spacer />
           <Button colorScheme="blue" isDisabled rightIcon={<LockIcon />}>
             Stake now
@@ -82,7 +77,12 @@ const App = () => {
         </Box>
       </Flex>
       <Flex h="10vh" align="center" justify="center">
-        <Flex w="80%" align="center" direction={{ base: "column", md: "row" }} gap={2}>
+        <Flex
+          w="80%"
+          align="center"
+          direction={{ base: "column", md: "row" }}
+          gap={2}
+        >
           <Heading
             color={subFontColor}
             fontFamily="'Roboto Mono', monospace"
