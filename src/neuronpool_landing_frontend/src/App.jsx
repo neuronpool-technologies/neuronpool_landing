@@ -25,7 +25,7 @@ const App = () => {
   return (
     <>
       <Flex h="10vh" align="center" justify="center">
-        <Flex w="80%" align="center">
+        <Flex w={{ base: "90%", md: "80%" }} align="center">
           <Image src={logo} h={"70px"} />
           <Spacer />
           <Button colorScheme="blue" isDisabled rightIcon={<LockIcon />}>
@@ -37,7 +37,7 @@ const App = () => {
         <Box
           bgGradient={`linear(to-b, ${topGradient}, ${middleGradient}, ${bottomGradient})`}
           h="90%"
-          w="80%"
+          w={{ base: "90%", md: "80%" }}
           borderRadius="lg"
         >
           <Flex align="center" justify="center" h="100%">
