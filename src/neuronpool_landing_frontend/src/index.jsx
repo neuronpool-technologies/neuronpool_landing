@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
-import { lightColor } from "./colors";
+import { lightColor, darkColor } from "./colors";
 import App from "./App";
 
 const theme = extendTheme({
@@ -12,7 +12,7 @@ const theme = extendTheme({
   styles: {
     global: (props) => ({
       body: {
-        bg: props.colorMode === "dark" ? lightColor : lightColor,
+        bg: props.colorMode === "light" ? lightColor : darkColor,
       },
     }),
   },

@@ -5,8 +5,9 @@ import {
   bottomGradient,
   subFontColor,
   lightColor,
+  darkColor,
 } from "./colors";
-import { LockIcon, CheckCircleIcon } from "@chakra-ui/icons";
+import { LockIcon, CheckCircleIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
 import {
   Box,
   Flex,
@@ -17,20 +18,28 @@ import {
   ListIcon,
   ListItem,
   Highlight,
-  Image,
+  Image as ChakraImage,
+  useColorMode,
+  Stack,
 } from "@chakra-ui/react";
 import logo from "../assets/neuronpool_logo.svg";
 
 const App = () => {
+  const { colorMode, toggleColorMode } = useColorMode();
   return (
     <>
       <Flex h="10vh" align="center" justify="center">
         <Flex w={{ base: "90%", md: "80%" }} align="center">
-          <Image src={logo} h={"70px"} />
+          <ChakraImage src={logo} h={"70px"} />
           <Spacer />
-          <Button colorScheme="blue" isDisabled rightIcon={<LockIcon />}>
-            Stake now
-          </Button>
+          <Stack direction={"row"} spacing={3}>
+            <Button colorScheme="blue" isDisabled rightIcon={<LockIcon />}>
+              Stake now
+            </Button>
+            <Button onClick={toggleColorMode} aria-label="Change color mode">
+              {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
+            </Button>
+          </Stack>
         </Flex>
       </Flex>
       <Flex align="center" justify="center" h="80vh">
@@ -45,7 +54,7 @@ const App = () => {
               <Heading
                 lineHeight="tall"
                 align="center"
-                color={"white"}
+                color={colorMode === "light" ? lightColor : darkColor}
                 fontFamily="'Roboto Mono', monospace"
                 fontSize={{ base: "xl", md: "3xl" }}
                 maxW="xl"
@@ -56,8 +65,10 @@ const App = () => {
                   styles={{
                     px: "1",
                     py: "1",
-                    color: "white",
-                    borderBottom: `double ${lightColor} 3px`,
+                    color: colorMode === "light" ? lightColor : darkColor,
+                    borderBottom: `double ${
+                      colorMode === "light" ? lightColor : darkColor
+                    } 3px`,
                   }}
                 >
                   Stake your ICP, join the pool and win big rewards!
@@ -107,15 +118,16 @@ const App = () => {
 export default App;
 
 const StyledListItem = ({ text }) => {
+  const { colorMode } = useColorMode();
   return (
     <ListItem
       mb={3}
       fontWeight={600}
       fontSize={{ base: "sm", md: "lg" }}
-      color={"white"}
+      color={colorMode === "light" ? lightColor : darkColor}
       fontFamily="'Roboto Mono', monospace"
     >
-      <ListIcon as={CheckCircleIcon} color="white" />
+      <ListIcon as={CheckCircleIcon} color={colorMode === "light" ? lightColor : darkColor} />
       {text}
     </ListItem>
   );
