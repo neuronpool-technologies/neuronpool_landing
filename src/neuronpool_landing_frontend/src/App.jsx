@@ -76,7 +76,7 @@ const App = () => {
               </Heading>
               <Flex align="center" justify="center" p={6}>
                 <List maxW="md">
-                  <StyledListItem text="Maturity is disbursed to one lucky winner, offering a chance for higher returns." />
+                  <StyledListItem text="All Staking Rewards from the pool are disbursed to one lucky winner." />
                   <StyledListItem text="Minimum stake of 0.1 ICP ensures a lower barrier of entry." />
                   <StyledListItem text="Fully automated - just stake and check if you won!" />
                   <StyledListItem text="Begin the 6 month withdrawal process any time." />
