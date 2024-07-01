@@ -7,7 +7,12 @@ import {
   lightColor,
   darkColor,
 } from "./colors";
-import { LockIcon, CheckCircleIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
+import {
+  ArrowForwardIcon,
+  CheckCircleIcon,
+  MoonIcon,
+  SunIcon,
+} from "@chakra-ui/icons";
 import {
   Box,
   Flex,
@@ -22,7 +27,7 @@ import {
   useColorMode,
   Stack,
 } from "@chakra-ui/react";
-import logo from "../assets/neuronpool_logo.svg";
+import logo from "../assets/logo.svg";
 
 const App = () => {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -30,13 +35,27 @@ const App = () => {
     <>
       <Flex h="10vh" align="center" justify="center">
         <Flex w={{ base: "90%", md: "80%" }} align="center">
-          <ChakraImage src={logo} h={"70px"} />
+          <ChakraImage alt="NeuronPool logo" src={logo} h={35} />
           <Spacer />
           <Stack direction={"row"} spacing={3}>
-            <Button colorScheme="blue" isDisabled rightIcon={<LockIcon />}>
-              Stake now
+            <Button
+              colorScheme="blue"
+              rounded="full"
+              boxShadow="base"
+              isDisabled
+              rightIcon={<ArrowForwardIcon />}
+              // as="a"
+              // href="https://stake.neuronpool.com/"
+              // target="_blank"
+            >
+              Stake ICP
             </Button>
-            <Button onClick={toggleColorMode} aria-label="Change color mode">
+            <Button
+              onClick={toggleColorMode}
+              rounded="full"
+              boxShadow="base"
+              aria-label="Change color mode"
+            >
               {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
             </Button>
           </Stack>
@@ -79,8 +98,8 @@ const App = () => {
                   <StyledListItem text="Staking rewards from the pool are disbursed to one lucky winner." />
                   <StyledListItem text="Minimum stake of 0.1 ICP ensures a low barrier of entry." />
                   <StyledListItem text="Fully automated - just stake and check if you won!" />
-                  <StyledListItem text="Begin the 6 month withdrawal process any time." />
-                  <StyledListItem text="Open-source and decentralized." />
+                  <StyledListItem text="Start the 6-month withdrawal anytime, and leave with your full stake." />
+                  <StyledListItem text="Secure Internet Identity login and reliable smart contracts." />
                 </List>
               </Flex>
             </Box>
@@ -127,7 +146,10 @@ const StyledListItem = ({ text }) => {
       color={colorMode === "light" ? lightColor : darkColor}
       fontFamily="'Roboto Mono', monospace"
     >
-      <ListIcon as={CheckCircleIcon} color={colorMode === "light" ? lightColor : darkColor} />
+      <ListIcon
+        as={CheckCircleIcon}
+        color={colorMode === "light" ? lightColor : darkColor}
+      />
       {text}
     </ListItem>
   );
