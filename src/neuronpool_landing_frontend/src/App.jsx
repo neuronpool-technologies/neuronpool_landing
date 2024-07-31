@@ -103,7 +103,7 @@ const App = () => {
                   <StyledListItem text="Minimum stake of 0.1 ICP ensures a low barrier of entry." />
                   <StyledListItem text="Fully automated - just stake and check if you won!" />
                   <StyledListItem text="Start the 6-month withdrawal anytime, and leave with your full stake." />
-                  <StyledListItem text="Secure Internet Identity login and reliable smart contracts." />
+                  <StyledListItem text="Secure Internet Identity login and open-source smart contracts." />
                 </List>
               </Flex>
             </Box>
