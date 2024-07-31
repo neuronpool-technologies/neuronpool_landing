@@ -8,3 +8,5 @@ export const lightColorBox = "#f7f7f8";
 export const darkColor = "#1d252a";
 export const darkColorBox = "#2c353d";
 export const mainColor = "#f04a01";
+export const lightBorderColor = "#e2e8f0";
+export const darkBorderColor = "#4a5157";

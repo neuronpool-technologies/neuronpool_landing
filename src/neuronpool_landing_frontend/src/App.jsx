@@ -6,6 +6,8 @@ import {
   subFontColor,
   lightColor,
   darkColor,
+  lightBorderColor,
+  darkBorderColor,
 } from "./colors";
 import {
   ArrowForwardIcon,
@@ -28,6 +30,9 @@ import {
   Stack,
 } from "@chakra-ui/react";
 import logo from "../assets/logo.svg";
+import xLogo from "../assets/x_logo.svg";
+import discordLogo from "../assets/discord_logo.svg";
+import githubLogo from "../assets/github_logo.svg";
 
 const App = () => {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -42,11 +47,10 @@ const App = () => {
               colorScheme="blue"
               rounded="full"
               boxShadow="base"
-              isDisabled
               rightIcon={<ArrowForwardIcon />}
-              // as="a"
-              // href="https://stake.neuronpool.com/"
-              // target="_blank"
+              as="a"
+              href="https://stake.neuronpool.com/"
+              target="_blank"
             >
               Stake ICP
             </Button>
@@ -112,6 +116,7 @@ const App = () => {
           align="center"
           direction={{ base: "column", md: "row" }}
           gap={2}
+          mb={8}
         >
           <Heading
             color={subFontColor}
@@ -121,13 +126,24 @@ const App = () => {
             hello@neuronpool.com
           </Heading>
           <Spacer />
-          <Heading
-            color={subFontColor}
-            fontFamily="'Roboto Mono', monospace"
-            size="sm"
-          >
-            Launching soon...
-          </Heading>
+          <Flex align="center" gap={3}>
+            <SocialIconLink
+              image={xLogo}
+              alt={"twitter link"}
+              link={"https://x.com/NeuronPool"}
+              xLogo
+            />
+            <SocialIconLink
+              image={discordLogo}
+              alt={"discord link"}
+              link={"https://discord.gg/5jRHUYnsrM"}
+            />
+            <SocialIconLink
+              image={githubLogo}
+              alt={"github link"}
+              link={"https://github.com/neuronpool-technologies"}
+            />
+          </Flex>
         </Flex>
       </Flex>
     </>
@@ -152,5 +168,27 @@ const StyledListItem = ({ text }) => {
       />
       {text}
     </ListItem>
+  );
+};
+
+const SocialIconLink = ({ image, alt, link, xLogo }) => {
+  const { colorMode, toggleColorMode } = useColorMode();
+
+  return (
+    <a href={link} target="_blank" rel="noreferrer">
+      <Box
+        rounded="full"
+        border={
+          colorMode === "light"
+            ? `solid ${lightBorderColor} 1px`
+            : `solid ${darkBorderColor} 1px`
+        }
+        p={2}
+        boxShadow="base"
+        _hover={{ opacity: "0.8", cursor: "pointer" }}
+      >
+        <ChakraImage h={"22px"} p={xLogo ? "3px" : 0} src={image} alt={alt} />
+      </Box>
+    </a>
   );
 };
