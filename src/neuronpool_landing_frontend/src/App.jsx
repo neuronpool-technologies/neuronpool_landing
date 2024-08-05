@@ -116,7 +116,7 @@ const App = () => {
           align="center"
           direction={{ base: "column", md: "row" }}
           gap={2}
-          mb={8}
+          mb={6}
         >
           <Heading
             color={subFontColor}
