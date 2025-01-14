@@ -22,12 +22,10 @@ import {
   Button,
   Heading,
   List,
-  ListIcon,
   ListItem,
   Highlight,
   Image as ChakraImage,
   useColorMode,
-  Stack,
 } from "@chakra-ui/react";
 import logo from "../assets/logo.svg";
 import xLogo from "../assets/x_logo.svg";
