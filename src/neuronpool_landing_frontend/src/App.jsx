@@ -11,7 +11,7 @@ import {
 } from "./colors";
 import {
   ArrowForwardIcon,
-  CheckCircleIcon,
+  ExternalLinkIcon,
   MoonIcon,
   SunIcon,
 } from "@chakra-ui/icons";
@@ -52,61 +52,80 @@ const App = () => {
           </Button>
         </Flex>
       </Flex>
-      <Flex
-        align="center"
-        justify="center"
-        direction={{ base: "column", md: "row" }}
-        gap={6}
-        h={{ base: "100%", md: "80vh" }}
-      >
-        <AppBox
-          title={
-            "Create ICP neuron vectors, set the destination and recieve maturity!"
-          }
-          highlight={["Create ICP neuron vectors", "recieve maturity"]}
+      <Flex align="center" justify="center" h="80vh">
+        <Box
+          bgGradient={`linear(to-b, ${topGradient}, ${middleGradient}, ${bottomGradient})`}
+          h="90%"
+          w={{ base: "90%", md: "80%" }}
+          borderRadius="lg"
         >
-          <List maxW="md">
-            <StyledListItem text="No manual maturity spawning or claiming—everything is automated." />
-            <StyledListItem text="Custom neuron configurations (delay, followee, and destinations)." />
-            <StyledListItem text="Open-source and decentralized, governed by the Neutrinite DAO." />
-            <StyledListItem text="Flexible fee options—either 5% of maturity or a fixed daily token rate." />
-          </List>
-          <Button
-            rounded="full"
-            boxShadow="base"
-            mt={6}
-            rightIcon={<ArrowForwardIcon />}
-            as="a"
-            href="https://vectors.neuronpool.com/"
-            target="_blank"
-          >
-            Create neuron vectors
-          </Button>
-        </AppBox>
-        <AppBox
-          title={"Stake your ICP, join the pool and win big rewards!"}
-          highlight={["Stake your ICP", "win big rewards"]}
-        >
-          <List maxW="md">
-            <StyledListItem text="Staking rewards from the pool are disbursed to one lucky winner." />
-            <StyledListItem text="Minimum stake of 0.1 ICP ensures a low barrier of entry." />
-            <StyledListItem text="Fully automated - just stake and check if you won!" />
-            <StyledListItem text="Start the 6-month withdrawal anytime, and leave with your full stake." />
-          </List>
-          <Button
-            rounded="full"
-            boxShadow="base"
-            mt={6}
-            rightIcon={<ArrowForwardIcon />}
-            as="a"
-            href="https://stake.neuronpool.com/"
-            target="_blank"
-          >
-            Join the pool
-          </Button>
-        </AppBox>
+          <Flex align="center" justify="center" h="100%">
+            <Box>
+              <Heading
+                lineHeight="tall"
+                align="center"
+                color={colorMode === "light" ? lightColor : darkColor}
+                fontFamily="'Roboto Mono', monospace"
+                fontSize={{ base: "lg", md: "3xl" }}
+                maxW="xl"
+                px={3}
+              >
+                <Highlight
+                  query={["Staking solutions"]}
+                  styles={{
+                    px: "1",
+                    py: "1",
+                    color: colorMode === "light" ? lightColor : darkColor,
+                    borderBottom: `double ${
+                      colorMode === "light" ? lightColor : darkColor
+                    } 3px`,
+                  }}
+                >
+                  Staking solutions on ICP!
+                </Highlight>
+              </Heading>
+              <Flex
+                align="center"
+                justify="center"
+                direction="column"
+                p={6}
+                gap={6}
+              >
+                <List maxW="md" align="center">
+                  <StyledListItem text="Building DeFi staking applications on the ICP blockchain." />
+                </List>
+                <Flex
+                  align="center"
+                  gap={3}
+                  direction={{ base: "column", md: "row" }}
+                >
+                  <Button
+                    rounded="full"
+                    boxShadow="base"
+                    rightIcon={<ExternalLinkIcon />}
+                    as="a"
+                    href="https://vectors.neuronpool.com/"
+                    target="_blank"
+                  >
+                    Create vectors
+                  </Button>
+                  <Button
+                    rounded="full"
+                    boxShadow="base"
+                    rightIcon={<ExternalLinkIcon />}
+                    as="a"
+                    href="https://stake.neuronpool.com/"
+                    target="_blank"
+                  >
+                    Join the pool
+                  </Button>
+                </Flex>
+              </Flex>
+            </Box>
+          </Flex>
+        </Box>
       </Flex>
-      <Flex mt={3} align="center" justify="center">
+      <Flex h="10vh" align="center" justify="center">
         <Flex
           w="80%"
           align="center"
@@ -158,10 +177,6 @@ const StyledListItem = ({ text }) => {
       color={colorMode === "light" ? lightColor : darkColor}
       fontFamily="'Roboto Mono', monospace"
     >
-      <ListIcon
-        as={CheckCircleIcon}
-        color={colorMode === "light" ? lightColor : darkColor}
-      />
       {text}
     </ListItem>
   );
@@ -186,50 +201,5 @@ const SocialIconLink = ({ image, alt, link, xLogo }) => {
         <ChakraImage h={"22px"} p={xLogo ? "3px" : 0} src={image} alt={alt} />
       </Box>
     </a>
-  );
-};
-
-const AppBox = ({ title, highlight, children }) => {
-  const { colorMode, toggleColorMode } = useColorMode();
-  return (
-    <Box
-      bgGradient={`linear(to-b, ${topGradient}, ${middleGradient}, ${bottomGradient})`}
-      boxShadow="base"
-      h="90%"
-      w={{ base: "90%", md: "40%" }}
-      borderRadius="lg"
-      py={6}
-    >
-      <Flex align="center" justify="center" h="100%">
-        <Box>
-          <Heading
-            lineHeight="tall"
-            align="center"
-            color={colorMode === "light" ? lightColor : darkColor}
-            fontFamily="'Roboto Mono', monospace"
-            fontSize={{ base: "lg", md: "2xl" }}
-            maxW="xl"
-            px={3}
-          >
-            <Highlight
-              query={highlight}
-              styles={{
-                px: "1",
-                py: "1",
-                color: colorMode === "light" ? lightColor : darkColor,
-                borderBottom: `double ${
-                  colorMode === "light" ? lightColor : darkColor
-                } 3px`,
-              }}
-            >
-              {title}
-            </Highlight>
-          </Heading>
-          <Flex align="center" justify="center" p={6} direction="column">
-            {children}
-          </Flex>
-        </Box>
-      </Flex>
-    </Box>
   );
 };
