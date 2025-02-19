@@ -97,7 +97,7 @@ const App = () => {
                   gap={3}
                   direction={{ base: "column", md: "row" }}
                 >
-                  <Button
+                  {/* <Button
                     rounded="full"
                     boxShadow="base"
                     rightIcon={<ExternalLinkIcon />}
@@ -106,7 +106,7 @@ const App = () => {
                     target="_blank"
                   >
                     Create vectors
-                  </Button>
+                  </Button> */}
                   <Button
                     rounded="full"
                     boxShadow="base"
