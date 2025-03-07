@@ -97,7 +97,7 @@ const App = () => {
                   gap={3}
                   direction={{ base: "column", md: "row" }}
                 >
-                  {/* <Button
+                  <Button
                     rounded="full"
                     boxShadow="base"
                     rightIcon={<ExternalLinkIcon />}
@@ -105,8 +105,8 @@ const App = () => {
                     href="https://vectors.neuronpool.com/"
                     target="_blank"
                   >
-                    Create vectors
-                  </Button> */}
+                    Explore vectors
+                  </Button>
                   <Button
                     rounded="full"
                     boxShadow="base"
