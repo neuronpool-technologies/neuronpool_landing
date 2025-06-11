@@ -1,16 +1,10 @@
 import {
-  topGradient,
-  bottomGradient,
-  subFontColor,
-  lightColor,
-  darkColor,
-} from "./colors";
-import {
   Box,
   Flex,
   Spacer,
   Button,
   Heading,
+  Text,
   Highlight,
   Image as ChakraImage,
   IconButton,
@@ -44,31 +38,27 @@ const App = () => {
       <Flex align="center" justify="center" h="80vh">
         <Box
           bgGradient="to-b"
-          gradientFrom={topGradient}
-          gradientTo={bottomGradient}
+          gradientFrom={"blue.emphasized"}
+          gradientTo={"blue.fg"}
           h="90%"
           w={{ base: "90%", md: "80%" }}
-          borderRadius="lg"
+          borderRadius="md"
+          boxShadow={"md"}
         >
           <Flex align="center" justify="center" h="100%">
             <Box>
               <Heading
-                color={colorMode === "light" ? lightColor : darkColor}
-                fontSize={{ base: "2xl", md: "4xl" }}
-                maxW="xl"
-                px={3}
                 letterSpacing="tight"
+                size={{ base: "xl", md: "2xl" }}
                 textAlign="center"
+                color="fg.inverted"
               >
                 <Highlight
                   query={["Staking solutions"]}
                   styles={{
                     px: "1",
                     py: "1",
-                    color: colorMode === "light" ? lightColor : darkColor,
-                    borderBottom: `double ${
-                      colorMode === "light" ? lightColor : darkColor
-                    } 3px`,
+                    borderBottom: `double 3px`,
                   }}
                 >
                   Staking solutions on ICP!
@@ -81,26 +71,24 @@ const App = () => {
                 p={6}
                 gap={6}
               >
-                <Heading
-                  letterSpacing="tight"
-                  size={{ base: "md", md: "xl" }}
-                  maxW="sm"
-                  textAlign={"center"}
-                  color={colorMode === "light" ? lightColor : darkColor}
+                <Text
+                  fontSize="md"
+                  color="fg.inverted"
+                  fontWeight={500}
+                  maxW="xs"
+                  textAlign="center"
                 >
-                  Building DeFi staking applications on the ICP blockchain.
-                </Heading>
-                <Flex align="center" direction={{ base: "column", md: "row" }}>
-                  <a
-                    href="https://vectors.neuronpool.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Button variant="surface" rounded="md" boxShadow="xs">
-                      Explore Vectors <BiLinkExternal />
-                    </Button>
-                  </a>
-                </Flex>
+                  Building DeFi staking applications on the ICP blockchain
+                </Text>
+                <a
+                  href="https://vectors.neuronpool.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button variant="surface" rounded="md" boxShadow="xs">
+                    Explore Vectors <BiLinkExternal />
+                  </Button>
+                </a>
               </Flex>
             </Box>
           </Flex>
@@ -114,9 +102,14 @@ const App = () => {
           gap={2}
           mb={6}
         >
-          <Heading color={subFontColor} size="md" letterSpacing="tight">
+          <Text
+            fontSize="sm"
+            fontWeight={500}
+            color="fg.subtle"
+            textTransform={"uppercase"}
+          >
             hello@neuronpool.com
-          </Heading>
+          </Text>
           <Spacer />
           <Flex align="center" gap={3}>
             <Social />
