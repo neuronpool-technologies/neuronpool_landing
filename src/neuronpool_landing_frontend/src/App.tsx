@@ -65,9 +65,9 @@ const App = () => {
               <Button
                 variant="ghost"
                 size="sm"
-                onClick={() => scrollToSection("how-it-works")}
+                onClick={() => scrollToSection("vectors-in-action")}
               >
-                How it Works
+                Use Cases
               </Button>
               <IconButton
                 onClick={() => toggleColorMode()}
@@ -83,7 +83,12 @@ const App = () => {
       </Box>
 
       {/* Hero Section - Full Screen */}
-      <Box minH="100vh" display="flex" alignItems="center" pt={{ base: 24, md: 20 }}>
+      <Box
+        minH="100vh"
+        display="flex"
+        alignItems="center"
+        pt={{ base: 24, md: 20 }}
+      >
         <Container maxW="6xl">
           <Grid
             templateColumns={{ base: "1fr", lg: "1fr 1fr" }}
@@ -157,8 +162,8 @@ const App = () => {
             <GridItem>
               <Box
                 bgGradient="to-br"
-                gradientFrom="blue.500"
-                gradientTo="blue.700"
+                gradientFrom="blue.focusRing"
+                gradientTo="blue.solid"
                 p={{ base: 6, lg: 8 }}
                 borderRadius={"2xl"}
                 boxShadow={"2xl"}
@@ -199,8 +204,14 @@ const App = () => {
         <Container maxW="6xl">
           <VStack gap={{ base: 10, md: 12 }}>
             <VStack gap={4} textAlign="center">
-              <Heading size={{ base: "xl", md: "2xl" }}>Why Choose NeuronPool?</Heading>
-              <Text fontSize={{ base: "lg", md: "xl" }} color="fg.muted" maxW="2xl">
+              <Heading size={{ base: "xl", md: "2xl" }}>
+                Why Choose NeuronPool?
+              </Heading>
+              <Text
+                fontSize={{ base: "lg", md: "xl" }}
+                color="fg.muted"
+                maxW="2xl"
+              >
                 Built by ICP DeFi experts, designed for automation and peace of
                 mind
               </Text>
@@ -231,12 +242,18 @@ const App = () => {
       </Box>
 
       {/* Use Cases Section */}
-      <Box py={{ base: 16, md: 20 }}>
+      <Box id="vectors-in-action" py={{ base: 16, md: 20 }}>
         <Container maxW="6xl">
           <VStack gap={{ base: 10, md: 12 }}>
             <VStack gap={4} textAlign="center">
-              <Heading size={{ base: "xl", md: "2xl" }}>Vectors in Action</Heading>
-              <Text fontSize={{ base: "lg", md: "xl" }} color="fg.muted" maxW="2xl">
+              <Heading size={{ base: "xl", md: "2xl" }}>
+                Vectors in Action
+              </Heading>
+              <Text
+                fontSize={{ base: "lg", md: "xl" }}
+                color="fg.muted"
+                maxW="2xl"
+              >
                 Trusted by DAOs and protocols to automate treasury management
                 and staking infrastructure
               </Text>
@@ -249,7 +266,7 @@ const App = () => {
               borderRadius="2xl"
               boxShadow="lg"
               border="2px solid"
-              borderColor="blue.200"
+              borderColor="blue.muted"
             >
               <Grid
                 templateColumns={{ base: "1fr", lg: "1fr 1fr" }}
@@ -324,7 +341,7 @@ const App = () => {
               borderRadius="2xl"
               boxShadow="lg"
               border="2px solid"
-              borderColor="green.200"
+              borderColor="green.muted"
             >
               <Grid
                 templateColumns={{ base: "1fr", lg: "1fr 1fr" }}
@@ -424,12 +441,14 @@ const App = () => {
       <Box
         py={{ base: 16, md: 20 }}
         bgGradient="to-r"
-        gradientFrom="blue.500"
-        gradientTo="blue.700"
+        gradientFrom="blue.focusRing"
+        gradientTo="blue.solid"
       >
         <Container maxW="4xl" textAlign="center">
           <VStack gap={6} color="white">
-            <Heading size={{ base: "xl", md: "2xl" }}>Ready to Deploy Your Vector?</Heading>
+            <Heading size={{ base: "xl", md: "2xl" }}>
+              Ready to Deploy Your Vector?
+            </Heading>
             <Text fontSize={{ base: "lg", md: "xl" }} opacity={0.9}>
               Start automating your ICP DeFi strategy with NeuronPool Vectors
             </Text>
@@ -452,7 +471,11 @@ const App = () => {
       </Box>
 
       {/* Footer */}
-      <Box py={{ base: 8, md: 12 }} borderTop="1px solid" borderColor="border.subtle">
+      <Box
+        py={{ base: 8, md: 12 }}
+        borderTop="1px solid"
+        borderColor="border.subtle"
+      >
         <Container maxW="6xl">
           <Flex
             align="center"
@@ -508,7 +531,6 @@ const FeatureCard = ({ icon, title, description }: FeatureCardProps) => {
   );
 };
 
-
 type UseCaseCardProps = {
   title: string;
   description: string;
@@ -527,6 +549,8 @@ const UseCaseCard = ({ title, description, features }: UseCaseCardProps) => {
       _hover={{ boxShadow: "md", transform: "translateY(-2px)" }}
       transition="all 0.3s ease"
       h="full"
+      border="2px solid"
+      borderColor="blue.muted"
     >
       <Heading fontSize={{ base: "lg", md: "xl" }} color="blue.600">
         {title}
