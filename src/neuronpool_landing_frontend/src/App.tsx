@@ -199,8 +199,8 @@ const App = () => {
         <Container maxW="6xl">
           <VStack gap={{ base: 10, md: 12 }}>
             <VStack gap={4} textAlign="center">
-              <Heading size="2xl">Why Choose NeuronPool?</Heading>
-              <Text fontSize="xl" color="fg.muted" maxW="2xl">
+              <Heading size={{ base: "xl", md: "2xl" }}>Why Choose NeuronPool?</Heading>
+              <Text fontSize={{ base: "lg", md: "xl" }} color="fg.muted" maxW="2xl">
                 Built by ICP DeFi experts, designed for automation and peace of
                 mind
               </Text>
@@ -235,8 +235,8 @@ const App = () => {
         <Container maxW="6xl">
           <VStack gap={{ base: 10, md: 12 }}>
             <VStack gap={4} textAlign="center">
-              <Heading size="2xl">Vectors in Action</Heading>
-              <Text fontSize="xl" color="fg.muted" maxW="2xl">
+              <Heading size={{ base: "xl", md: "2xl" }}>Vectors in Action</Heading>
+              <Text fontSize={{ base: "lg", md: "xl" }} color="fg.muted" maxW="2xl">
                 Trusted by DAOs and protocols to automate treasury management
                 and staking infrastructure
               </Text>
@@ -269,7 +269,7 @@ const App = () => {
                     >
                       Featured Integration
                     </Box>
-                    <Heading size="xl" color="blue.600">
+                    <Heading size={{ base: "lg", md: "xl" }} color="blue.600">
                       Powering cICP Liquid Staking
                     </Heading>
                     <Text color="fg.muted" lineHeight="relaxed">
@@ -344,7 +344,7 @@ const App = () => {
                     >
                       DAO Innovation
                     </Box>
-                    <Heading size="xl" color="green.600">
+                    <Heading size={{ base: "lg", md: "xl" }} color="green.600">
                       Powering Sneed DAO's RLL Model
                     </Heading>
                     <Text color="fg.muted" lineHeight="relaxed">
@@ -429,8 +429,8 @@ const App = () => {
       >
         <Container maxW="4xl" textAlign="center">
           <VStack gap={6} color="white">
-            <Heading size="2xl">Ready to Deploy Your Vector?</Heading>
-            <Text fontSize="xl" opacity={0.9}>
+            <Heading size={{ base: "xl", md: "2xl" }}>Ready to Deploy Your Vector?</Heading>
+            <Text fontSize={{ base: "lg", md: "xl" }} opacity={0.9}>
               Start automating your ICP DeFi strategy with NeuronPool Vectors
             </Text>
             <a
@@ -500,7 +500,7 @@ const FeatureCard = ({ icon, title, description }: FeatureCardProps) => {
       <Box p={3} bg="blue.50" borderRadius="lg" color="blue.500">
         {icon}
       </Box>
-      <Heading size="md">{title}</Heading>
+      <Heading fontSize={{ base: "lg", md: "xl" }}>{title}</Heading>
       <Text color="fg.muted" lineHeight="relaxed">
         {description}
       </Text>
@@ -508,36 +508,6 @@ const FeatureCard = ({ icon, title, description }: FeatureCardProps) => {
   );
 };
 
-type StepCardProps = {
-  number: string;
-  title: string;
-  description: string;
-};
-
-const StepCard = ({ number, title, description }: StepCardProps) => {
-  return (
-    <VStack gap={4} textAlign="center">
-      <Box
-        w={12}
-        h={12}
-        bg="blue.500"
-        color="white"
-        borderRadius="full"
-        display="flex"
-        alignItems="center"
-        justifyContent="center"
-        fontSize="lg"
-        fontWeight="bold"
-      >
-        {number}
-      </Box>
-      <Heading size="md">{title}</Heading>
-      <Text color="fg.muted" lineHeight="relaxed">
-        {description}
-      </Text>
-    </VStack>
-  );
-};
 
 type UseCaseCardProps = {
   title: string;
@@ -558,7 +528,7 @@ const UseCaseCard = ({ title, description, features }: UseCaseCardProps) => {
       transition="all 0.3s ease"
       h="full"
     >
-      <Heading size="md" color="blue.600">
+      <Heading fontSize={{ base: "lg", md: "xl" }} color="blue.600">
         {title}
       </Heading>
       <Text color="fg.muted" lineHeight="relaxed" flex={1}>
