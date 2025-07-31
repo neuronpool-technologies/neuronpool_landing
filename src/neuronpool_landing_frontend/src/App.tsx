@@ -312,7 +312,7 @@ const App = () => {
                   </VStack>
                 </GridItem>
                 <GridItem>
-                  <Box bg="blue.50" p={6} borderRadius="xl" textAlign="center">
+                  <Box bg="bg.info" p={6} borderRadius="xl" textAlign="center">
                     <VStack gap={3}>
                       <Text
                         fontSize="sm"
@@ -387,7 +387,7 @@ const App = () => {
                   </VStack>
                 </GridItem>
                 <GridItem>
-                  <Box bg="green.50" p={6} borderRadius="xl" textAlign="center">
+                  <Box bg="bg.success" p={6} borderRadius="xl" textAlign="center">
                     <VStack gap={3}>
                       <Text
                         fontSize="sm"
