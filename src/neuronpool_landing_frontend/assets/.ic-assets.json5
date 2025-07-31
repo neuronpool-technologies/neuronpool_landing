@@ -1,0 +1,7 @@
+[
+    {
+        "match": "**/*",
+        "allow_raw_access": false,
+        "disable_security_policy_warning": true
+    },
+]
