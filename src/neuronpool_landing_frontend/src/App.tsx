@@ -425,7 +425,7 @@ const App = () => {
               />
               <UseCaseCard
                 title="Maturity & Cycles Automation"
-                description="Automate maturity distribution and cycles management with NTC integration. Redeem vectors distribute cycles across multiple canisters, while mint vectors convert maturity to cycles."
+                description="Automate maturity distribution and cycles management with NTC integration. Mint vectors convert maturity to cycles, while redeem vectors distribute cycles across multiple canisters."
                 features={[
                   "Maturity Distribution",
                   "NTC Integration",
